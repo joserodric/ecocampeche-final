@@ -1,0 +1,673 @@
+/* ==========================================
+   1. VARIABLES DE DISEÑO (PALETA DE COLORES)
+   ========================================== */
+:root {
+  --bg-dark: #101612;
+  --bg-card: rgba(20, 31, 24, 0.65);
+  --bg-glass: rgba(255, 255, 255, 0.05);
+
+  --accent-green: #00e676;
+  --accent-light: #69f0ae;
+  --accent-blue: #40c4ff;
+  --accent-red: #ff5252;
+
+  --text-main: #f5f7f6;
+  --text-muted: #9eb1a5;
+
+  --border-glass: rgba(0, 230, 118, 0.18);
+  --shadow-main: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================
+   2. RESET Y ESTILOS GENERALES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.6;
+  position: relative;
+}
+
+/* Decoraciones laterales en cascada */
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 180px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.07;
+  filter: drop-shadow(0 0 12px rgba(0, 230, 118, 0.25));
+}
+
+body::before {
+  left: 1.5%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 800" fill="%2300e676"><path d="M70,80 C30,100 20,160 10,210 C35,200 70,180 90,120 C100,90 95,50 70,80 Z M30,350 C70,370 80,430 90,480 C65,470 30,450 10,390 C0,360 5,320 30,350 Z M80,620 C40,640 30,700 20,750 C45,740 80,720 100,660 C110,630 105,590 80,620 Z"/></svg>');
+  background-repeat: repeat-y;
+  background-size: 140px auto;
+}
+
+body::after {
+  right: 1.5%;
+  transform: scaleX(-1);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 800" fill="%2300e676"><path d="M70,80 C30,100 20,160 10,210 C35,200 70,180 90,120 C100,90 95,50 70,80 Z M30,350 C70,370 80,430 90,480 C65,470 30,450 10,390 C0,360 5,320 30,350 Z M80,620 C40,640 30,700 20,750 C45,740 80,720 100,660 C110,630 105,590 80,620 Z"/></svg>');
+  background-repeat: repeat-y;
+  background-size: 140px auto;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-title p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   3. HERO Y FONDO CON IMAGEN
+   ========================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background:
+    linear-gradient(rgba(86, 90, 87, 0.65), rgba(15, 20, 16, 0.85)),
+    url("img/nareeta-martin-FoG7PKNYjpM-unsplash.jpg") no-repeat center
+      center/cover;
+}
+
+/* ==========================================
+   4. NAVBAR CON BORDE NEÓN GIRATORIO CONSTANTE
+   ========================================== */
+.navbar {
+  position: sticky;
+  top: 1.5rem;
+  z-index: 100;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 50px;
+  box-shadow: var(--shadow-main);
+  overflow: hidden;
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 280deg,
+    var(--accent-green) 340deg,
+    #ffffff 360deg
+  );
+  animation: continuousRun 3s linear infinite;
+  z-index: -2;
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: var(--bg-card);
+  border-radius: 48px;
+  z-index: -1;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@keyframes continuousRun {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo-icon-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-green), var(--accent-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 230, 118, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  transition: color 0.3s ease;
+}
+
+.brand-logo:hover .logo-icon-container {
+  transform: scale(1.08);
+}
+
+.brand-logo:hover .logo-text {
+  color: var(--accent-light);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-light);
+}
+
+/* ==========================================
+   5. CONTENIDO DEL HERO & BOTONES
+   ========================================== */
+.hero-content {
+  text-align: center;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent-green);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--bg-glass);
+  color: var(--text-main);
+  border: 1px solid var(--border-glass);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   6. SECCIÓN ESTADO DE LA COMUNIDAD & TARJETAS
+   ========================================== */
+.estado-comunidad {
+  text-align: center;
+  padding: 5rem 20px;
+  scroll-margin-top: 80px;
+}
+
+.contenedor-imagenes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 2rem;
+}
+
+.tarjeta-imagen img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-imagen img:hover {
+  transform: scale(1.02);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 255, 102, 0.25);
+  border-radius: 20px;
+  padding: 2.2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-green);
+  box-shadow: 0 15px 35px rgba(0, 255, 102, 0.25);
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 230, 118, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-light);
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.info-block {
+  margin-bottom: 4rem;
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-accent-green:hover {
+  border-color: var(--accent-green);
+}
+.card-accent-blue:hover {
+  border-color: #3b82f6;
+}
+.card-accent-blue .card-icon {
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.15);
+}
+.card-accent-red:hover {
+  border-color: #ef4444;
+}
+.card-accent-red .card-icon {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.15);
+}
+
+/* Bloque de Salud y Prevención */
+.health-section {
+  background: rgba(18, 33, 23, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 255, 102, 0.3);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.health-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.health-text h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.health-text p {
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.check-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.check-list li {
+  color: var(--text-main);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.check-list i {
+  color: var(--accent-green);
+  margin-top: 0.2rem;
+}
+
+.health-banner {
+  background: rgba(0, 230, 118, 0.1);
+  border: 1px dashed var(--accent-green);
+  border-radius: 16px;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.health-icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--accent-light);
+}
+
+.health-icon-box i {
+  font-size: 3rem;
+}
+.health-icon-box span {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-main);
+}
+
+/* ==========================================
+   7. SECCIÓN FUNDADORES
+   ========================================== */
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.founder-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  box-shadow: var(--shadow-main);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.founder-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-green);
+  box-shadow: 0 8px 25px rgba(0, 230, 118, 0.2);
+}
+
+.founder-avatar {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 1.25rem auto;
+  border: 3px solid var(--accent-green);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 230, 118, 0.2);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.founder-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.founder-card:hover .founder-avatar {
+  transform: scale(1.08);
+  border-color: var(--accent-light);
+}
+
+.founder-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.founder-role {
+  display: inline-block;
+  color: var(--accent-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.founder-card p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+/* ==========================================
+   8. FOOTER
+   ========================================== */
+.footer {
+  border-top: 1px solid var(--border-glass);
+  padding: 2.5rem 0;
+  margin-top: 4rem;
+  background: rgba(10, 14, 11, 0.8);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ==========================================
+   9. MEDIA QUERIES (RESPONSIVE)
+   ========================================== */
+@media (min-width: 992px) {
+  .founders-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 95%;
+    top: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.25rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .health-container {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .section-title h2 {
+    font-size: 1.75rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    gap: 0.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+
+  .founders-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ocultar decoraciones laterales en pantallas pequeñas */
+@media (max-width: 1024px) {
+  body::before,
+  body::after {
+    display: none;
+  }
+}
+
+/* Ocultar los enlaces del navbar en dispositivos móviles (pantallas menores o iguales a 768px) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}

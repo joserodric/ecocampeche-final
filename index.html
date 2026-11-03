@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoCampeche</title>
+    <!-- Cargar estilos locales con preload -->
+    <link rel="preload" href="styles.css" as="style" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Carga optimizada y no bloqueante para FontAwesome -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+    </noscript>
+  </head>
+  <body>
+    <!-- SECCIÓN PRINCIPAL / HERO -->
+    <header class="hero">
+      <nav class="navbar">
+        <a href="#" class="brand-logo">
+          <div class="logo-icon-container">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <span class="logo-text">EcoCampeche</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#imagenes">Imágenes</a></li>
+          <li><a href="#informacion">Información</a></li>
+          <li><a href="#fundadores">Fundadores</a></li>
+          <li><a href="#comunidad">Comunidad</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content">
+        <h1>Cuidemos nuestro planeta</h1>
+        <p>
+          Preservando la biodiversidad y creando comunidades ecosostenibles.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#comunidad" class="btn btn-primary">Conocer la Comunidad</a>
+          <a href="#informacion" class="btn btn-secondary">Conocer Más</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECCIÓN DE IMAGENES DEL ESTADO DE LA COMUNIDAD-->
+    <section id="imagenes" class="estado-comunidad container">
+      <div class="section-title">
+        <h2>Estado Actual de Nuestra Comunidad</h2>
+        <p>Registro visual de los puntos clave en Urbanización Campeche.</p>
+      </div>
+
+      <div class="contenedor-imagenes">
+        <div class="tarjeta-imagen">
+          <img
+            src="img/basura1.jpeg"
+            loading="lazy"
+            alt="Estado actual zona norte, campeche,sector 4A"
+          />
+        </div>
+
+        <div class="tarjeta-imagen">
+          <img
+            src="img/basura2.jpeg"
+            loading="lazy"
+            alt="Estado actual zona sur, campeche,sector 4A"
+          />
+        </div>
+
+        <div class="tarjeta-imagen">
+          <img
+            src="img/basura3.jpeg"
+            loading="lazy"
+            alt="Estado actual zona sur, campeche,sector 4A"
+          />
+        </div>
+
+        <div class="tarjeta-imagen">
+          <img
+            src="img/basur4.jpeg"
+            loading="lazy"
+            alt="Estado actual zona sur, campeche,sector 4A"
+          />
+        </div>
+
+        <div class="tarjeta-imagen">
+          <img
+            src="img/basura6.jpeg"
+            loading="lazy"
+            alt="Estado actual zona sur, campeche,sector 4A"
+          />
+        </div>
+        <div class="tarjeta-imagen">
+          <img
+            src="img/basura8.jpeg"
+            loading="lazy"
+            alt="Estado actual zona sur, campeche,sector 4A"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE INFORMACIÓN Y EDUCACIÓN AMBIENTAL -->
+    <main class="section-with-decor">
+      <section id="informacion" class="section container">
+        <div class="section-title">
+          <h2>Guía de Concienciación y Salud</h2>
+          <p>
+            Aprende cómo pequeñas acciones diarias protegen nuestro entorno y
+            mejoran la calidad de vida en nuestra comunidad.
+          </p>
+        </div>
+
+        <!-- BLOQUE 1: CÓMO CLASIFICAR Y DÓNDE TIRAR LA BASURA -->
+        <div class="info-block">
+          <h3 class="sub-title">
+            <i class="fa-solid fa-dumpster-fire"></i> Clasificación Correcta de
+            Residuos
+          </h3>
+          <div class="cards-grid">
+            <article class="card card-accent-green">
+              <div class="card-icon">
+                <i class="fa-solid fa-apple-whole"></i>
+              </div>
+              <h3>Orgánicos</h3>
+              <p>
+                Restos de comida, cáscaras y hojas secas. Almacénalos en bolsas
+                cerradas o aprovéchalos para compostaje casero.
+              </p>
+            </article>
+
+            <article class="card card-accent-blue">
+              <div class="card-icon">
+                <i class="fa-solid fa-bottle-water"></i>
+              </div>
+              <h3>Inorgánicos Reciclables</h3>
+              <p>
+                Botellas plásticas, latas, cartón y vidrio. Entriégalos limpios
+                y secos en los puntos de acopio comunitarios.
+              </p>
+            </article>
+
+            <article class="card card-accent-red">
+              <div class="card-icon"><i class="fa-solid fa-biohazard"></i></div>
+              <h3>Desechos Peligrosos</h3>
+              <p>
+                Pilas, bombillos, medicamentos vencidos y baterías.
+                <strong>Nunca</strong> los tires al contenedor común o cañadas.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- BLOQUE 2: SALUD COMUNITARIA Y PREVENCIÓN DE ENFERMEDADES -->
+        <div class="info-block health-section">
+          <div class="health-container">
+            <div class="health-text">
+              <h3>
+                <i class="fa-solid fa-heart-pulse"></i> Cuida Tu Salud
+                Protegiendo el Entorno
+              </h3>
+              <p>
+                Un manejo inadecuado de la basura atrae plagas y genera
+                criaderos de mosquitos. Sigue estas recomendaciones:
+              </p>
+              <ul class="check-list">
+                <li>
+                  <i class="fa-solid fa-circle-check"></i>
+                  <strong>Evita aguas estancadas:</strong> Voltea cauchos,
+                  macetas y envases vacíos para prevenir el dengue.
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check"></i>
+                  <strong>Respeta los horarios de recolección:</strong> Sacar la
+                  basura a tiempo evita que los animales rompan las bolsas.
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check"></i>
+                  <strong>Mantén despejados los drenajes:</strong> No arrojes
+                  desperdicios a los canales para evitar inundaciones en
+                  lluvias.
+                </li>
+              </ul>
+            </div>
+            <div class="health-banner">
+              <div class="health-icon-box">
+                <i class="fa-solid fa-shield-virus"></i>
+                <span>Comunidad Limpia = Familia Sana</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOQUE 3: RIESGOS PARA LA SALUD Y ENFERMEDADES -->
+        <div class="info-block">
+          <h3 class="sub-title">
+            <i class="fa-solid fa-triangle-exclamation"></i> Riesgos para la
+            Salud y Enfermedades
+          </h3>
+          <div class="cards-grid">
+            <article class="card card-accent-red">
+              <div class="card-icon"><i class="fa-solid fa-mosquito"></i></div>
+              <h3>Dengue, Zika y Chikungunya</h3>
+              <p>
+                Transmitidos por el mosquito <em>Aedes aegypti</em>, el cual se
+                reproduce en envases, cauchos y recipientes donde se acumula
+                agua de lluvia o residuos estancados.
+              </p>
+            </article>
+
+            <article class="card card-accent-red">
+              <div class="card-icon"><i class="fa-solid fa-disease"></i></div>
+              <h3>Leptospirosis y Roedores</h3>
+              <p>
+                Infección bacteriana transmitida por el contacto con agua o
+                tierra contaminada por orina de ratas, atraídas por la
+                acumulación de basura orgánica sin tapar.
+              </p>
+            </article>
+
+            <article class="card card-accent-red">
+              <div class="card-icon"><i class="fa-solid fa-bacteria"></i></div>
+              <h3>Enfermedades Gastrointestinales</h3>
+              <p>
+                Bacterias y parásitos que proliferan en la basura expuesta,
+                transportados por moscas hacia alimentos y agua de consumo en el
+                hogar.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN FUNDADORES -->
+      <section id="fundadores" class="section container">
+        <div class="section-title">
+          <h2>Equipo Fundador</h2>
+          <p>Las personas detrás de la iniciativa EcoCampeche.</p>
+        </div>
+
+        <div class="founders-grid">
+          <article class="founder-card">
+            <div class="founder-avatar">
+              <img
+                src="img/jose.jpg"
+                loading="lazy"
+                alt="Foto de José Rodríguez"
+                class="founder-img"
+              />
+            </div>
+            <h3>José Rodríguez</h3>
+            <span class="founder-role">Desarrollador Web</span>
+            <p>Socio-Tecnológico — EcoCampeche Sector 4A.</p>
+          </article>
+
+          <article class="founder-card">
+            <div class="founder-avatar">
+              <img
+                src="img/cris.jpeg"
+                loading="lazy"
+                alt="Foto de Cristhian Chacón"
+                class="founder-img"
+              />
+            </div>
+            <h3>Cristhian Chacón</h3>
+            <span class="founder-role">Desarrollador Web</span>
+            <p>Socio-Tecnológico — EcoCampeche Sector 4A.</p>
+          </article>
+
+          <article class="founder-card">
+            <div class="founder-avatar">
+              <img
+                src="img/isaaaaaaaaaaaaaaa.jpeg"
+                loading="lazy"
+                alt="Foto de Isabella Velásquez"
+                class="founder-img"
+              />
+            </div>
+            <h3>Isabella Velásquez</h3>
+            <span class="founder-role">Desarrollador Web</span>
+            <p>Socio-Tecnológico — EcoCampeche Sector 4A.</p>
+          </article>
+
+          <article class="founder-card">
+            <div class="founder-avatar">
+              <img
+                src="img/raul.jpeg"
+                loading="lazy"
+                alt="Foto de Raúl Román"
+                class="founder-img"
+              />
+            </div>
+            <h3>Raúl Román</h3>
+            <span class="founder-role">Desarrollador Web</span>
+            <p>Socio-Tecnológico — EcoCampeche Sector 4A.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECCIÓN COMUNIDAD / HISTORIA Y RESEÑA DE CAMPECHE -->
+      <section id="comunidad" class="section container">
+        <div class="section-title">
+          <h2>Nuestra Comunidad: Sector 4A de Campeche</h2>
+          <p>
+            Conoce los orígenes e historia del entorno que hoy protegemos y
+            transformamos juntos a través de EcoCampeche.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-icon"><i class="fa-solid fa-landmark"></i></div>
+            <h3>Etimología y Origen</h3>
+            <p>
+              El nombre <strong>Campeche</strong> proviene de las voces mayas
+              <em>"Can"</em> (serpiente) y <em>"Pech"</em> (garrapata),
+              vinculado históricamente al
+              <em>"Lugar del Señor Sol Garrapata"</em>. Hoy, su herencia resuena
+              en la identidad de nuestra comunidad.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+            <h3>Orígenes de la Tierra</h3>
+            <p>
+              Los terrenos de Campeche Sector 4A fueron originalmente fundos
+              agrícolas de tierras fértiles, dedicados al cultivo de frutas,
+              hortalizas y a la cría de animales antes de su consolidación
+              urbana.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <h3>Consolidación Urbana</h3>
+            <p>
+              Su desarrollo habitacional inició en los años 90 mediante
+              proyectos conjuntos con INAVI y la Fundación Regional de la
+              Vivienda, dando paso a la creación de los sectores que hoy
+              integran la urbanización.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-content">
+        <a href="#" class="brand-logo">
+          <div class="logo-icon-container">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <span class="logo-text">EcoCampeche</span>
+        </a>
+        <p>© 2026 EcoCampeche — Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>
